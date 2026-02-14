@@ -16,42 +16,66 @@
 
         body {
             background:linear-gradient(145deg,blue,rgb(40, 0, 140));
+            min-height: 100vh;
+            padding: 24px;
         }
 
         .container{
+            width: min(1400px, 100%);
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 40px;
+            gap: 12px;
+            margin-top: 20px;
+            align-items: flex-start;
         }
 
         .omer {
-            width: 400px;
+            width: min(400px, 100%);
             height: auto;
+            border-radius: 10px;
             transition: 0.3s;
+            display: block;
         }
+
         .omer:hover{
             box-shadow: 0px 0px 100px 10px pink;
         }
-        
+
         a{
             text-decoration: none;
-            font-size: 40px;
+            font-size: clamp(18px, 3vw, 40px);
             text-align: center;
             color: white;
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-            padding-top: 400px;
-            padding-left: 100px;
-            padding-right: 100px;
+            padding: 18px 22px;
             background: rgb(75, 50, 242);
-            box-shadow: 0px 0px 10px 10px black;
+            box-shadow: 0px 0px 10px 2px black;
             border-radius: 20px;
             transition: 0.3s;
+            width: min(420px, 100%);
         }
+
         a:hover{
-            box-shadow: 0px 0px 100px 10px black;
-        }   
+            box-shadow: 0px 0px 60px 8px black;
+            transform: translateY(-2px);
+        }
+
+        /* Audio responsive */
+        audio{
+            width: min(1400px, 100%);
+            display: block;
+            margin: 20px auto 0 auto;
+        }
+
+        /* Mobile spacing */
+        @media (max-width: 600px){
+            body{ padding: 14px; }
+            .container{ margin-top: 12px; gap: 10px; }
+        }
      </style>
 </head>
 
