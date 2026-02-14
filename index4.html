@@ -16,59 +16,63 @@
         body{
             background:linear-gradient(145deg,rgb(0, 0, 158),rgb(50, 23, 119),rgb(102, 102, 102));
             min-height: 100vh;
-            padding: 24px;
+            padding: 20px;
         }
 
         .container{
-            width: min(1200px, 100%);
-            margin: 0 auto;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         a{
-            font-size: clamp(18px, 3vw, 50px);
+            font-size: clamp(18px, 2.2vw, 50px);
             text-decoration: none;
             color: white;
-            padding: 18px 28px;
+            padding: 18px 26px;
             margin-bottom: 10px;
             margin-top: 10px;
             background: rgb(75, 50, 242);
-            border-radius: 22px;
-            box-shadow: 0px 0px 10px 4px black;
-            transition: 0.2s;
+            border-radius: 40px;
+            box-shadow: 0px 0px 10px 3px black;
+            transition: 0.3s;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: min(700px, 100%);
+            width: min(900px, 100%);
             text-align: center;
         }
 
         a:hover{
             box-shadow: 0px 0px 50px 10px black;
-            transform: translateY(-2px);
         }
 
         .vid{
-            width: min(1200px, 100%);
-            margin: 16px auto 0 auto;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            margin: 18px 0;
         }
 
+        /* ✅ Make videos responsive */
         video{
-            width: 100%;
-            max-width: 100%;
+            width: min(1000px, 100%);
             height: auto;
-            border-radius: 14px;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.35);
+            border-radius: 16px;
+            box-shadow: 0px 0px 12px 2px black;
         }
 
-        @media (max-width: 600px){
-            body{ padding: 14px; }
-            .vid{ margin-top: 12px; }
+        /* ✅ Better spacing on big screens */
+        @media (min-width: 900px){
+            body{
+                padding: 40px;
+            }
+            .vid{
+                margin: 26px 0;
+            }
         }
     </style>
 </head>
@@ -118,12 +122,6 @@
     <div class="vid">
         <video controls>
             <source src="xl7.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="vid">
-        <video controls>
-            <source src="bliard.mp4" type="video/mp4">
         </video>
     </div>
 
