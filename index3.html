@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMERa xosh</title>
+
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(14500deg,rgb(0, 0, 255),rgb(0, 100, 150),rgb(94, 40, 255));
+    }
+
+    .container{
+      text-align: center;
+      justify-content: center;
+      gap: 100px;
+    }
+
+    button{
+      text-decoration: none;
+      font-size: 50px;
+      margin: 30px;   
+      padding: 100px;
+      margin-top: 100px;
+      background-color: rgb(0, 85, 255);
+      box-shadow: 0px 0px 10px 10px black;
+      border-radius: 10px;
+      transition: 0.3s;
+      border: none;              /* ✅ added (better look) */
+      cursor: pointer;           /* ✅ added */
+    }
+
+    button:hover{
+      box-shadow: 0px 0px 100px 10px;
+    }
+
+    a{
+      text-decoration: none;
+      text-align: center;
+      color: white;
+    }
+
+    p{
+      text-align: center;
+      font-size: 90px;
+      margin-top: 30px;
+      color: white;
+    }
+
+    .aa{
+      text-decoration: none;
+    }
+
+    .player{
+      background: #111;
+      padding: 20px;
+      width: 300px;
+      border-radius: 15px;
+      text-align: center;
+      margin: 50px auto;
+    }
+
+    .player button{
+      background: blue;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 5px;
+      font-size: 18px;          /* ✅ added so it’s not huge */
+    }
+
+    .player button:hover{
+      background: darkblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button class="aa"><a href="index.html">Paigi peshwtr</a></button>
+    <br>
+    <button><a href="index2.html">OMERa dallaqor Photo</a></button>
+    <button><a href="index4.html">OMERa dallaqor Video</a></button>
+    <p>Click bka lam 2 buttonay sarawa bka bo beneni shta xoshakan !</p>
+    <p>am sounday xwarishawa e3trafa !!</p>
+
+    
+  </div>
+
+  <div class="player">
+    <audio id="audio">
+      <source src="xaloqa8ba.mp3" type="audio/mpeg">
+    </audio>
+
+    <button type="button" onclick="playAudio()">▶ Play</button>
+    <button type="button" onclick="pauseAudio()">⏸ Pause</button>
+  </div>
+
+  <!-- ✅ THIS PART WAS MISSING -->
+  <script>
+    const audio = document.getElementById("audio");
+
+    function playAudio() {
+      audio.play();
+    }
+
+    function pauseAudio() {
+      audio.pause();
+    }
+
+  </script>
+</body>
+</html>
