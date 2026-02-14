@@ -9,62 +9,62 @@
     *{
       margin: 0px;
       padding: 0px;
-      box-sizing: border-box;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      box-sizing: border-box;
     }
 
     body{
       background:linear-gradient(14500deg,rgb(0, 0, 255),rgb(0, 100, 150),rgb(94, 40, 255));
       min-height: 100vh;
-      padding: 24px;
+      padding: 20px;
     }
 
     .container{
-      width: min(1200px, 100%);
-      margin: 0 auto;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 18px;
-      padding-top: 10px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 30px;
     }
 
-    /* Buttons responsive */
     button{
       text-decoration: none;
-      font-size: clamp(18px, 2.4vw, 50px);
-      margin: 0px;
-      padding: clamp(16px, 4vw, 60px);
+      font-size: clamp(18px, 2.2vw, 50px);
+      margin: 0px;   
+      padding: clamp(16px, 2.2vw, 50px);
       margin-top: 0px;
       background-color: rgb(0, 85, 255);
-      box-shadow: 0px 0px 10px 4px black;
-      border-radius: 12px;
-      transition: 0.2s;
+      box-shadow: 0px 0px 10px 3px black;
+      border-radius: 10px;
+      transition: 0.3s;
       border: none;
       cursor: pointer;
-      width: min(700px, 100%);
+      width: min(900px, 100%);
     }
 
     button:hover{
-      box-shadow: 0px 0px 40px 6px black;
-      transform: translateY(-2px);
+      box-shadow: 0px 0px 60px 6px;
     }
 
     a{
       text-decoration: none;
       text-align: center;
       color: white;
-      display: inline-block;
+      display: block;
       width: 100%;
     }
 
     p{
       text-align: center;
-      font-size: clamp(20px, 3.2vw, 90px);
+      font-size: clamp(18px, 3vw, 90px);
       margin-top: 10px;
       color: white;
       line-height: 1.2;
+      width: min(1000px, 100%);
     }
 
     .aa{
@@ -74,14 +74,13 @@
     .player{
       background: #111;
       padding: 20px;
-      width: min(520px, 100%);
+      width: min(420px, 100%);
       border-radius: 15px;
       text-align: center;
-      margin: 26px auto 0 auto;
-      box-shadow: 0px 10px 30px rgba(0,0,0,0.35);
+      margin: 30px auto 50px auto;
+      box-shadow: 0px 0px 10px 2px black;
     }
 
-    /* Player buttons stay normal size */
     .player button{
       background: blue;
       color: white;
@@ -89,29 +88,35 @@
       padding: 10px 20px;
       border-radius: 10px;
       cursor: pointer;
-      margin: 6px;
+      margin: 5px;
       font-size: 18px;
       width: auto;
-      box-shadow: none;
-      transform: none;
     }
 
     .player button:hover{
       background: darkblue;
     }
 
-    /* Bottom audio responsive */
-    audio{
-      width: min(1200px, 100%);
-      display: block;
-      margin: 20px auto 0 auto;
-    }
+    /* ✅ On big screens put the 2 buttons next to each other */
+    @media (min-width: 900px){
+      .container{
+        gap: 22px;
+      }
 
-    /* Small screens: tighter padding */
-    @media (max-width: 600px){
-      body{ padding: 14px; }
-      button{ padding: 18px; }
-      .container{ gap: 12px; }
+      /* Keep first button alone, next two side-by-side */
+      .container button:nth-of-type(2),
+      .container button:nth-of-type(3){
+        width: 48%;
+      }
+
+      .container{
+        flex-wrap: wrap;
+      }
+
+      /* Make buttons align nicely when wrapping */
+      .container button{
+        max-width: 900px;
+      }
     }
   </style>
 </head>
@@ -124,6 +129,8 @@
     <button><a href="index4.html">OMERa dallaqor Video</a></button>
     <p>Click bka lam 2 buttonay sarawa bka bo beneni shta xoshakan !</p>
     <p>am sounday xwarishawa e3trafa !!</p>
+
+    
   </div>
 
   <div class="player">
@@ -133,12 +140,6 @@
 
     <button type="button" onclick="playAudio()">▶ Play</button>
     <button type="button" onclick="pauseAudio()">⏸ Pause</button>
-  </div>
-
-  <div>
-    <audio controls autoplay loop>
-      <source src="xll.mp3" type="audio/mpeg">
-    </audio>
   </div>
 
   <script>
