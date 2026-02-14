@@ -17,64 +17,73 @@
         body {
             background:linear-gradient(145deg,blue,rgb(40, 0, 140));
             min-height: 100vh;
-            padding: 24px;
+            padding: 20px;
         }
 
         .container{
-            width: min(1400px, 100%);
-            margin: 0 auto;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 12px;
             margin-top: 20px;
-            align-items: flex-start;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .omer {
             width: min(400px, 100%);
+            max-width: 100%;
             height: auto;
-            border-radius: 10px;
             transition: 0.3s;
+            border-radius: 12px;
             display: block;
         }
 
         .omer:hover{
-            box-shadow: 0px 0px 100px 10px pink;
+            box-shadow: 0px 0px 60px 6px pink;
         }
-
+        
         a{
             text-decoration: none;
-            font-size: clamp(18px, 3vw, 40px);
+            font-size: clamp(18px, 2.2vw, 40px);
             text-align: center;
             color: white;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 18px 22px;
+            padding: 18px 26px;
             background: rgb(75, 50, 242);
             box-shadow: 0px 0px 10px 2px black;
             border-radius: 20px;
             transition: 0.3s;
-            width: min(420px, 100%);
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 10px;
         }
 
         a:hover{
-            box-shadow: 0px 0px 60px 8px black;
-            transform: translateY(-2px);
+            box-shadow: 0px 0px 60px 6px black;
         }
 
-        /* Audio responsive */
-        audio{
-            width: min(1400px, 100%);
-            display: block;
-            margin: 20px auto 0 auto;
+        /* ✅ Make it a clean grid feel on bigger screens */
+        @media (min-width: 700px){
+            .container{
+                gap: 16px;
+            }
+            a{
+                width: auto;
+                margin-bottom: 0px;
+            }
+            .omer{
+                width: 320px;
+            }
         }
 
-        /* Mobile spacing */
-        @media (max-width: 600px){
-            body{ padding: 14px; }
-            .container{ margin-top: 12px; gap: 10px; }
+        @media (min-width: 1100px){
+            .omer{
+                width: 360px;
+            }
         }
      </style>
 </head>
@@ -105,20 +114,7 @@
         <img class="omer" src="omer17.jpg">
         <img class="omer" src="omer18.jpg">
         <img class="omer" src="omer19.jpg">
-        <img class="omer" src="omer20.png">
-        <img class="omer" src="omer21.jpg">
-        <img class="omer" src="omer22.jpg">
-        <img class="omer" src="omer23.jpg">
-        <img class="omer" src="omer24.png">
-        <img class="omer" src="omer25.jpg">
 
     </div>
-
-    <div>
-        <audio controls autoplay loop>
-         <source src="xll.mp3" type="audio/mpeg">
-        </audio>
-
-      </div>
 </body>
 </html>
