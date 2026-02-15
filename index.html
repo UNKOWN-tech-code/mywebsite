@@ -9,26 +9,23 @@
 *{
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-  margin-top: 130px;
-  margin-bottom: 110px;
-  padding: 20px;
   background: rgb(65, 65, 211);
-  display:flex;  
+  min-height: 100vh;
+  display:flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  padding: 24px;
 }
 
 /* MAIN BOX VERY BIG */
 .main-box{
   width: min(1900px, 100%);
   height: auto;
-  min-height: 850px;
   background: white;
   border-radius: 20px;
   display: flex;
@@ -41,21 +38,20 @@ body{
   width: 50%;
   background: linear-gradient(135deg, #2c61c5, #6dd1ff);
   color: white;
-  padding: clamp(25px, 4vw, 80px);
+  padding: clamp(24px, 4vw, 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .left h1{
   font-size: clamp(28px, 3.2vw, 60px);
-  line-height: 1.1;
 }
 
 .left p{
   margin-top: 0px;
-  font-size: clamp(16px, 1.5vw, 26px);
+  font-size: clamp(16px, 1.4vw, 26px);
   line-height: 1.4;
 }
 
@@ -65,20 +61,20 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(18px, 3vw, 60px);
+  padding: clamp(18px, 3vw, 40px);
 }
 
 .login-box{
   width: min(650px, 100%);
   background: white;
-  padding: clamp(18px, 3vw, 60px);
+  padding: clamp(20px, 3vw, 60px);
   border-radius: 20px;
-  box-shadow: 0px 5px 30px 1px;
+  box-shadow: 0px 5px 30px 1px rgba(0,0,0,0.15);
 }
 
 .login-box h2{
   text-align: center;
-  font-size: clamp(20px, 2vw, 36px);
+  font-size: clamp(18px, 2vw, 36px);
   line-height: 1.2;
 }
 
@@ -88,57 +84,61 @@ hr{
 
 .input-group label{
   display: block;
-  margin-top: 25px;
-  font-size: clamp(16px, 1.2vw, 22px);
+  margin-top: 18px;
+  font-size: clamp(14px, 1.2vw, 22px);
 }
 
 .input-group input{
   width: 100%;
-  padding: 18px;
+  padding: 16px;
   margin-top: 10px;
-  font-size: clamp(16px, 1.2vw, 22px);
-  transition: 0.3s;
+  font-size: clamp(14px, 1.2vw, 22px);
+  transition: 0.2s;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  outline: none;
 }
 
+/* hover WITHOUT changing size (no layout jump) */
 .input-group input:hover{
-  padding: 20px;
+  box-shadow: 0px 0px 0px 3px rgba(114,163,255,0.25);
+  border-color: rgba(114,163,255,0.8);
 }
 
+/* Button */
 button{
   width: 100%;
-  margin-top: 35px;
-  padding: 20px;
-  font-size: clamp(18px, 1.6vw, 28px);
+  margin-top: 28px;
+  padding: 18px;
+  font-size: clamp(16px, 1.6vw, 28px);
   border-radius: 10px;
   border: none;
   background: linear-gradient(135deg, #72a3ff, #6dd1ff);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
+/* hover WITHOUT changing padding (no layout jump) */
 button:hover{
-  padding: 23px;
-  box-shadow: 0px 2px 10px black;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
 }
 
 .a-buttom{
   color: azure;
-  display: block;
-  width: 100%;
 }
 
 .dont-have-account{
-  font-size: clamp(14px, 1.1vw, 20px);
+  font-size: clamp(13px, 1.1vw, 20px);
   margin-top: 20px;
   text-align: center;
   line-height: 1.4;
 }
 
 .forgot{
-  font-size: clamp(13px, 1vw, 18px);
+  font-size: clamp(12px, 1vw, 18px);
   display: inline-block;
-  margin-top: 12px;
-  line-height: 1.35;
+  margin-top: 10px;
 }
 
 a{
@@ -149,34 +149,32 @@ a{
 .aaa{
   text-decoration: none;
   margin-top: 30px;
-  font-size: clamp(18px, 1.7vw, 30px);
+  font-size: clamp(16px, 1.6vw, 30px);
   display: inline-block;
 }
 
-/* Make audio responsive too */
+/* Audio responsive */
 audio{
   width: 100%;
   margin-top: 16px;
 }
 
-/* ✅ Tablet + Mobile layout */
-@media (max-width: 1000px){
-  body{
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
+/* Keep .qn but make it not break the page */
+.qn{
+  margin-top: clamp(24px, 6vw, 120px);
+  width: min(1900px, 100%);
+}
 
+/* ---------- MOBILE FIX ---------- */
+@media (max-width: 900px){
   .main-box{
     flex-direction: column;
-    min-height: 0px;
   }
-
   .left, .right{
     width: 100%;
   }
-
-  .right{
-    justify-content: stretch;
+  body{
+    align-items: flex-start;
   }
 }
 </style>
@@ -226,7 +224,7 @@ audio{
         </audio>
 
       </div>
-        
+
         <a  href="info.html" class="aaa">Tebene grng !!</a>
 
     </div>
@@ -235,5 +233,11 @@ audio{
 
 </div>
 
+<div class="qn">
+        <audio controls autoplay loop>
+         <source src="xll.mp3" type="audio/mpeg">
+        </audio>
+
+      </div>
 </body>
 </html>
